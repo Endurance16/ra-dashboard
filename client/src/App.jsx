@@ -5,7 +5,7 @@ function App() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/hello')
+    axios.get('https://ra-dashboard-ylkj.onrender.com/api/hello')
       .then(res => setMessage(res.data))
       .catch(() => setMessage('Error contacting backend'));
   }, []);
