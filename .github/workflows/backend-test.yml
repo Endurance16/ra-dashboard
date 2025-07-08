@@ -3,6 +3,8 @@ name: Backend CI
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   test-backend:
@@ -17,9 +19,13 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Change to server directory
-        run: cd server && npm install
+      - name: Install dependencies
+        run: |
+          cd server
+          npm install
 
-      - name: Run tests
-        run: cd server && npm test
+      - name: Run unit tests with npx
+        run: |
+          cd server
+          npx jest
 
