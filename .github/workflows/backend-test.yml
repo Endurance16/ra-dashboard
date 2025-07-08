@@ -21,7 +21,9 @@ jobs:
         working-directory: server
         run: npm install
 
+      - name: Install Jest globally
+        run: npm install -g jest
+
       - name: Run backend tests
         working-directory: server
-        run: npx --yes jest
-
+        run: jest
