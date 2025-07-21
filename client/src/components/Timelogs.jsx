@@ -10,7 +10,7 @@ function Timelogs() {
     description: ''
   });
 
-  const API = 'https://ra-dashboard-ylkj.onrender.com/api/timelogs';
+  const API = import.meta.env.VITE_API_BASE + '/api/timelogs';
 
   useEffect(() => {
     axios.get(API)

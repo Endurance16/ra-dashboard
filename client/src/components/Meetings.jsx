@@ -9,7 +9,7 @@ function Meetings() {
     notes: ''
   });
 
-  const API = 'https://ra-dashboard-ylkj.onrender.com/api/meetings'; // Or your Render backend
+  const API = import.meta.env.VITE_API_BASE + '/api/meetings'; // Or your Render backend
 
   useEffect(() => {
     axios.get(API)

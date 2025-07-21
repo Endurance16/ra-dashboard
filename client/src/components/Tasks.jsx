@@ -9,7 +9,7 @@ function Tasks() {
     status: ''
   });
 
-  const API = 'https://ra-dashboard-ylkj.onrender.com/api/tasks'; // or use your deployed URL
+  const API = import.meta.env.VITE_API_BASE + '/api/tasks'; // or use your deployed URL
 
   useEffect(() => {
     axios.get(API)

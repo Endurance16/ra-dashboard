@@ -14,11 +14,11 @@ function Dashboard() {
     const loadData = async () => {
       try {
         const [logs, tasks, meetings, research, issues] = await Promise.all([
-          axios.get('https://ra-dashboard-ylkj.onrender.com/api/timelogs'),
-          axios.get('https://ra-dashboard-ylkj.onrender.com/api/tasks'),
-          axios.get('https://ra-dashboard-ylkj.onrender.com/api/meetings'),
-          axios.get('https://ra-dashboard-ylkj.onrender.com/api/research'),
-          axios.get('https://ra-dashboard-ylkj.onrender.com/api/issues'),
+          axios.get(import.meta.env.VITE_API_BASE + '/api/timelogs'),
+          axios.get(import.meta.env.VITE_API_BASE + '/api/tasks'),
+          axios.get(import.meta.env.VITE_API_BASE + '/api/meetings'),
+          axios.get(import.meta.env.VITE_API_BASE + '/api/research'),
+          axios.get(import.meta.env.VITE_API_BASE + '/api/issues'),
         ]);
 
         const totalHours = logs.data.reduce((sum, l) => sum + Number(l.hours), 0);

@@ -10,7 +10,7 @@ function Research() {
     notes: ''
   });
 
-  const API = 'https://ra-dashboard-ylkj.onrender.com/api/research'; // or Render URL
+  const API = import.meta.env.VITE_API_BASE + '/api/research'; // or Render URL
 
   useEffect(() => {
     axios.get(API)

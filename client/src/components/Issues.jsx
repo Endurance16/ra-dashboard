@@ -10,7 +10,7 @@ function Issues() {
     details: ''
   });
 
-  const API = 'https://ra-dashboard-ylkj.onrender.com/api/issues'; // or Render backend
+  const API = import.meta.env.VITE_API_BASE + '/api/issues'; // or Render backend
 
   useEffect(() => {
     axios.get(API)
